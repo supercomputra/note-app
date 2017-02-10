@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Z7i-p8-hdb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Z7i-p8-hdb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gad-Re-018" id="dFm-E8-g6x">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="hjk-69-zY2">
@@ -105,7 +105,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xat-e9-YDR">
-                                        <rect key="frame" x="8" y="40" width="359" height="36.5"/>
+                                        <rect key="frame" x="8" y="40" width="359" height="563"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -113,7 +113,7 @@
                                             <outlet property="delegate" destination="xO6-fV-2aF" id="DBP-ns-Fm3"/>
                                         </connections>
                                     </textView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Note Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q3h-hM-3a0">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Note Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q3h-hM-3a0">
                                         <rect key="frame" x="8" y="8" width="359" height="24"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -128,6 +128,7 @@
                                     <constraint firstAttribute="trailing" secondItem="xat-e9-YDR" secondAttribute="trailing" constant="8" id="Pro-Qb-kL7"/>
                                     <constraint firstItem="q3h-hM-3a0" firstAttribute="top" secondItem="Sx4-Zk-YI9" secondAttribute="top" constant="8" id="S7r-pC-EbU"/>
                                     <constraint firstItem="xat-e9-YDR" firstAttribute="top" secondItem="q3h-hM-3a0" secondAttribute="bottom" constant="8" id="ScC-5f-4sk"/>
+                                    <constraint firstAttribute="bottom" secondItem="xat-e9-YDR" secondAttribute="bottom" id="hTl-KG-3Bz"/>
                                     <constraint firstItem="q3h-hM-3a0" firstAttribute="centerX" secondItem="xat-e9-YDR" secondAttribute="centerX" id="wvJ-LK-zpt"/>
                                 </constraints>
                             </scrollView>
@@ -138,6 +139,7 @@
                             <constraint firstAttribute="trailing" secondItem="q3h-hM-3a0" secondAttribute="trailing" constant="8" id="Ic0-wU-Ebj"/>
                             <constraint firstItem="q3h-hM-3a0" firstAttribute="leading" secondItem="EOy-8p-RKJ" secondAttribute="leading" constant="8" id="NWg-L4-DpE"/>
                             <constraint firstItem="Sx4-Zk-YI9" firstAttribute="top" secondItem="8d1-gp-Yfi" secondAttribute="bottom" id="Oac-Ou-Mga"/>
+                            <constraint firstItem="PKv-kO-W4k" firstAttribute="top" secondItem="xat-e9-YDR" secondAttribute="bottom" id="g6A-ce-Bfd"/>
                             <constraint firstItem="Sx4-Zk-YI9" firstAttribute="bottom" secondItem="PKv-kO-W4k" secondAttribute="top" id="hat-aQ-UEt"/>
                             <constraint firstItem="Sx4-Zk-YI9" firstAttribute="leading" secondItem="EOy-8p-RKJ" secondAttribute="leading" id="tH8-Uk-h6C"/>
                         </constraints>

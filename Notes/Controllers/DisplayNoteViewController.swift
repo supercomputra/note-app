@@ -76,6 +76,7 @@ class DisplayNoteViewController: UIViewController, UITextViewDelegate, UIScrollV
         self.noteContentTextView.sizeToFit()
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let listNotesTableViewController = segue.destination as! ListNotesTableViewController
         if let identifier = segue.identifier {
