@@ -14,7 +14,7 @@ class DisplayNoteViewController: UIViewController, UITextViewDelegate, UIScrollV
     
     @IBOutlet weak var noteTitleTextField: UITextField!
 
-    @IBOutlet weak var noteContentTextView: UITextView!
+    @IBOutlet weak var noteContentTextField: UITextField!
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -22,10 +22,10 @@ class DisplayNoteViewController: UIViewController, UITextViewDelegate, UIScrollV
         super.viewWillAppear(animated)
         if let note = note {
             noteTitleTextField.text = note.title
-            noteContentTextView.text = note.content
+            noteContentTextField.text = note.content
         } else {
             noteTitleTextField.text = ""
-            noteContentTextView.text = ""
+            noteContentTextField.text = ""
         }
         
     }
@@ -38,8 +38,6 @@ class DisplayNoteViewController: UIViewController, UITextViewDelegate, UIScrollV
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden), name: .UIKeyboardWillHide, object: nil)
-        
-        // Do any additional setup after loading the view, typically from a nib.
         
     }
     
@@ -54,8 +52,8 @@ class DisplayNoteViewController: UIViewController, UITextViewDelegate, UIScrollV
         
         var aRect = self.view.frame
         aRect.size.height -= (kbSize?.height)!
-        if !aRect.contains(noteContentTextView.frame.origin) {
-            self.scrollView.scrollRectToVisible(noteContentTextView.frame, animated: true)
+        if !aRect.contains(noteContentTextField.frame.origin) {
+            self.scrollView.scrollRectToVisible(noteContentTextField.frame, animated: true)
         }
         
     }
@@ -73,7 +71,7 @@ class DisplayNoteViewController: UIViewController, UITextViewDelegate, UIScrollV
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.noteContentTextView.sizeToFit()
+        self.noteContentTextField.sizeToFit()
     }
     
     
@@ -87,14 +85,14 @@ class DisplayNoteViewController: UIViewController, UITextViewDelegate, UIScrollV
                 if note != nil {
                     let note = self.note ?? Note()
                     note.title = noteTitleTextField.text ?? ""
-                    note.content = noteContentTextView.text ?? ""
+                    note.content = noteContentTextField.text ?? ""
                     note.modificationTime = Date()
                     CoreDataHelper.saveNote()
                     listNotesTableViewController.tableView.reloadData()
                 } else {
                     let newNote = Note()
                     newNote.title = noteTitleTextField.text ?? ""
-                    newNote.content = noteContentTextView.text ?? ""
+                    newNote.content = noteContentTextField.text ?? ""
                     newNote.modificationTime = Date()
                     listNotesTableViewController.notes.append(newNote)
                 }

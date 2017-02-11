@@ -104,15 +104,6 @@
                             <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="Sx4-Zk-YI9">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xat-e9-YDR">
-                                        <rect key="frame" x="8" y="40" width="359" height="563"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="xO6-fV-2aF" id="DBP-ns-Fm3"/>
-                                        </connections>
-                                    </textView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Note Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q3h-hM-3a0">
                                         <rect key="frame" x="8" y="8" width="359" height="24"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -120,16 +111,22 @@
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Note Content" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0lh-Zz-Qm5">
+                                        <rect key="frame" x="8" y="43" width="359" height="17"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="xat-e9-YDR" secondAttribute="bottom" id="Dxs-zD-xuD"/>
-                                    <constraint firstItem="xat-e9-YDR" firstAttribute="leading" secondItem="Sx4-Zk-YI9" secondAttribute="leading" constant="8" id="ENx-Aq-cAc"/>
-                                    <constraint firstAttribute="trailing" secondItem="xat-e9-YDR" secondAttribute="trailing" constant="8" id="Pro-Qb-kL7"/>
                                     <constraint firstItem="q3h-hM-3a0" firstAttribute="top" secondItem="Sx4-Zk-YI9" secondAttribute="top" constant="8" id="S7r-pC-EbU"/>
-                                    <constraint firstItem="xat-e9-YDR" firstAttribute="top" secondItem="q3h-hM-3a0" secondAttribute="bottom" constant="8" id="ScC-5f-4sk"/>
-                                    <constraint firstAttribute="bottom" secondItem="xat-e9-YDR" secondAttribute="bottom" id="hTl-KG-3Bz"/>
-                                    <constraint firstItem="q3h-hM-3a0" firstAttribute="centerX" secondItem="xat-e9-YDR" secondAttribute="centerX" id="wvJ-LK-zpt"/>
+                                    <constraint firstAttribute="bottom" secondItem="0lh-Zz-Qm5" secondAttribute="bottom" constant="533" id="V61-XR-epI"/>
+                                    <constraint firstItem="0lh-Zz-Qm5" firstAttribute="leading" secondItem="q3h-hM-3a0" secondAttribute="leading" id="W6Z-Ew-YjP"/>
+                                    <constraint firstItem="0lh-Zz-Qm5" firstAttribute="trailing" secondItem="Sx4-Zk-YI9" secondAttribute="trailingMargin" id="X72-l0-pMA"/>
+                                    <constraint firstItem="0lh-Zz-Qm5" firstAttribute="trailing" secondItem="q3h-hM-3a0" secondAttribute="trailing" id="bLY-Ig-kRv"/>
+                                    <constraint firstItem="0lh-Zz-Qm5" firstAttribute="top" secondItem="q3h-hM-3a0" secondAttribute="bottom" constant="11" id="zCa-5U-gEB"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -139,7 +136,6 @@
                             <constraint firstAttribute="trailing" secondItem="q3h-hM-3a0" secondAttribute="trailing" constant="8" id="Ic0-wU-Ebj"/>
                             <constraint firstItem="q3h-hM-3a0" firstAttribute="leading" secondItem="EOy-8p-RKJ" secondAttribute="leading" constant="8" id="NWg-L4-DpE"/>
                             <constraint firstItem="Sx4-Zk-YI9" firstAttribute="top" secondItem="8d1-gp-Yfi" secondAttribute="bottom" id="Oac-Ou-Mga"/>
-                            <constraint firstItem="PKv-kO-W4k" firstAttribute="top" secondItem="xat-e9-YDR" secondAttribute="bottom" id="g6A-ce-Bfd"/>
                             <constraint firstItem="Sx4-Zk-YI9" firstAttribute="bottom" secondItem="PKv-kO-W4k" secondAttribute="top" id="hat-aQ-UEt"/>
                             <constraint firstItem="Sx4-Zk-YI9" firstAttribute="leading" secondItem="EOy-8p-RKJ" secondAttribute="leading" id="tH8-Uk-h6C"/>
                         </constraints>
@@ -152,7 +148,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="noteContentTextView" destination="xat-e9-YDR" id="dzU-I7-DjL"/>
+                        <outlet property="noteContentTextField" destination="0lh-Zz-Qm5" id="aXt-Hn-JCX"/>
                         <outlet property="noteTitleTextField" destination="q3h-hM-3a0" id="FU1-Lu-vEY"/>
                         <outlet property="scrollView" destination="Sx4-Zk-YI9" id="jJe-yp-Gqq"/>
                     </connections>
